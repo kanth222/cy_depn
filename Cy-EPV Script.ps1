@@ -1,3 +1,6 @@
+#ObjectName	ObjectFolder	SafeName	PlatformID	DependencyAddress	DependencyType	DependencyName	TaskFolder
+
+
 $ScriptFullPath = $MyInvocation.MyCommand.Path
 $ScriptLocation = Split-Path -Parent $ScriptFullPath
 
