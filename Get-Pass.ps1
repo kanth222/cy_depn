@@ -1,4 +1,4 @@
-﻿
+
 ###############################################################################
 #### Created with the help of cyberark epv api scripts helper functions   #####
 ## This can export password of accounts from cyberark. It has 3 switches  #####
@@ -1116,7 +1116,7 @@ if ($export) {
 
         $accountsInfo = Get-Accounts -SafeName $safeName -logonHeader $srcToken -url $PVWAURL
         if ($accountsInfo) {
-            Write-LogMessage -type Info "Total accounts found in safe "$safeName": "$accountsInfo.count
+            Write-LogMessage -type Info "Total accounts found in safe $($safeName): $($accountsInfo.count)"
             <# Action to perform if the condition is true #>
         }
         else {
@@ -1140,7 +1140,7 @@ if ($export) {
             
             if ($safeAccounts) {
                 $accountsInfo += $safeAccounts
-                Write-LogMessage -type Info "Total accounts found in safe "$safe": "$safeAccounts.count
+                Write-LogMessage -type Info "Total accounts found in safe $($safe): $($safeAccounts.count)"
             }
             else {
                 Write-LogMessage -type Info "Unable to get accounts from the safe "$safe
@@ -1153,7 +1153,7 @@ if ($export) {
 
     $exportAccounts = @()
     
-    Write-LogMessage -type Info "Total accounts to be exported: "$accountsInfo.count
+    Write-LogMessage -type Info "Total accounts to be exported: $($accountsInfo.count)"
 
     $counter = 0
     $totalAccounts = $accountsInfo.count
